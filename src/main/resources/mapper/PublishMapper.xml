@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dollar.penguin.publish.mapper.PublishMapper">
+
+  <select id="queryAllCustomer" resultType="com.dollar.penguin.publish.model.CustomerModel">
+    select id, c_code as cCode, c_name as cName, created_at as createAt, updated_at as updatedAt from customer
+  </select>
+
+  <insert id="insertCustomer" parameterType="java.lang.String">
+    insert into customer(c_code, c_name) values (#{cCode},#{cName})
+  </insert>
+
+</mapper>
